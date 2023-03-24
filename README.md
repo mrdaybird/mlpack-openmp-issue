@@ -1,7 +1,10 @@
 # mlpack-openmp-issue
 
   You can run the "ResNet.cpp" with armadillo and openmp. 
-  The program uses 4 threads and dynamics teams is turned off.
+  
+  **NOTE**: The program may crash or severly slow down your computer. Optionally, you can use the 'train_sample.csv' file instead of 'train.csv' to run it against a smaller dataset. 
+  
+  The program uses 4 threads and dynamics teams is turned off, you can change these option or remove it(which is required to run without openmp support) in the start of *main* method.
 
 - train.csv - contains 1999 images from the MNIST, it is used by default.
 - train_sample.csv - contains 32 images from MNIST.
