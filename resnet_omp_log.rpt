@@ -1,0 +1,51 @@
+==19361== Memcheck, a memory error detector
+==19361== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==19361== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==19361== Command: ./resnet18-omp
+==19361== Parent PID: 3047
+==19361== 
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x25
+### unhandled dwarf2 abbrev form code 0x23
+get_Form_szB: unhandled 35 (DW_FORM_rnglistx)
+--19361-- WARNING: Serious error when reading debug info
+--19361-- When reading debug info from /mnt/Garage/develop_linux/mlpack-playground/mlpack-dag-network/test/resnet18-omp:
+--19361-- get_Form_contents: unhandled DW_FORM
+==19361== 
+==19361== HEAP SUMMARY:
+==19361==     in use at exit: 2,660 bytes in 5 blocks
+==19361==   total heap usage: 69,806,425 allocs, 69,806,420 frees, 17,627,398,986 bytes allocated
+==19361== 
+==19361== 160 bytes in 1 blocks are possibly lost in loss record 4 of 5
+==19361==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19361==    by 0x4BBD068: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BBC09A: ___kmp_allocate (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4C3CBE6: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BE6522: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BD485A: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BD44B4: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4C680C9: omp_set_dynamic (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x11C024: main (ResNet18_Example.cpp:87)
+==19361== 
+==19361== 2,396 bytes in 1 blocks are possibly lost in loss record 5 of 5
+==19361==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19361==    by 0x4BBD068: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BBC09A: ___kmp_allocate (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BE7557: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BD4546: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4BD44B4: ??? (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x4C680C9: omp_set_dynamic (in /usr/lib/llvm-14/lib/libomp.so.5)
+==19361==    by 0x11C024: main (ResNet18_Example.cpp:87)
+==19361== 
+==19361== LEAK SUMMARY:
+==19361==    definitely lost: 0 bytes in 0 blocks
+==19361==    indirectly lost: 0 bytes in 0 blocks
+==19361==      possibly lost: 2,556 bytes in 2 blocks
+==19361==    still reachable: 104 bytes in 3 blocks
+==19361==         suppressed: 0 bytes in 0 blocks
+==19361== Reachable blocks (those to which a pointer was found) are not shown.
+==19361== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==19361== 
+==19361== For lists of detected and suppressed errors, rerun with: -s
+==19361== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
